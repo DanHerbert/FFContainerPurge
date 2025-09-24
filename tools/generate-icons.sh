@@ -3,8 +3,8 @@
 SCRIPT_DIR=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
 ICONS_DIR="$(realpath "$SCRIPT_DIR"/../src/icons)"
 
-themes=( 'dark' 'light' )
-sizes=( 32 48 64 256 )
+themes=('dark' 'light')
+sizes=(32 48 64 256)
 
 for theme in "${themes[@]}"; do
     theme_output="-$theme"
@@ -20,7 +20,7 @@ for theme in "${themes[@]}"; do
         else
             sed -E -i 's/fill="[^\"]+"/fill="#000"/' "$ICONS_DIR/fire-icon.svg"
         fi
-        rsvg-convert -h "$size" -w "$size" "$ICONS_DIR/fire-icon.svg" > "$ICONS_DIR/fire-icon-${size}${theme_output}.png"
+        rsvg-convert -h "$size" -w "$size" "$ICONS_DIR/fire-icon.svg" >"$ICONS_DIR/fire-icon-${size}${theme_output}.png"
     done
 done
 sed -E -i 's/fill="[^\"]+"/fill="#000"/' "$ICONS_DIR/fire-icon.svg"

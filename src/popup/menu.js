@@ -1,7 +1,7 @@
 const $qs = document.querySelector.bind(document);
 
 function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function loadSettings() {
@@ -49,9 +49,9 @@ function loadCookieCount() {
 
 async function showConfirmation(cookieStoreId) {
   let ctxId = {};
-  try{
+  try {
     // Don't attempt for default container; API throws an exception if called.
-    if (cookieStoreId !== 'firefox-default') {
+    if (cookieStoreId !== "firefox-default") {
       ctxId = await browser.contextualIdentities.get(cookieStoreId);
     }
   } catch (err) {
@@ -90,10 +90,10 @@ async function showConfirmation(cookieStoreId) {
     ctxIcon.classList.add("hidden");
     ctxName.innerText = "Default";
   }
-  $qs('#confirm').disabled = true;
+  $qs("#confirm").disabled = true;
   document.documentElement.classList.add("confirmation");
   await delay(1250);
-  $qs('#confirm').disabled = false;
+  $qs("#confirm").disabled = false;
 }
 
 async function handlePurgeClick() {

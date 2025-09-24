@@ -2,8 +2,8 @@
   /* Postscript name is "Asap-Regular" for loading purposes, but when assigning
      within a CSS rule, the name is just "Asap" */
   font-family: "Asap-Regular";
-  font-weight: 400;
   font-stretch: 100%;
+  font-weight: 400;
   src: url("./Asap-Regular.otf") format("otf");
 }
 
@@ -14,8 +14,8 @@
 }
 
 html {
-  font-size: 16px;
   font-family: "Asap", sans-serif;
+  font-size: 16px;
 }
 
 html,
@@ -44,15 +44,15 @@ html .hidden {
 }
 
 button {
-  border-radius: 4px;
+  background-color: hsl(240, 3%, 94%);
   border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
   margin: 3% auto;
-  width: 100%;
   padding: 4px;
   text-align: center;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: hsl(240, 3%, 94%);
+  width: 100%;
 }
 
 button:hover,
@@ -68,8 +68,8 @@ button[disabled],
 button[disabled]:hover,
 button[disabled]:focus,
 button[disabled]:active {
-  color: hsl(0, 0%, 80%);
   background-color: hsl(240, 0%, 96%);
+  color: hsl(0, 0%, 80%);
   cursor: default;
 }
 
@@ -120,9 +120,9 @@ button[disabled]:active {
 }
 
 .contextual-identities {
+  border-bottom: 3px solid transparent;
   display: inline-block;
   word-break: keep-all;
-  border-bottom: 3px solid transparent;
 }
 
 .contextual-identities[style] {
