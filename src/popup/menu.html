@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="menu.css"/>
+  </head>
+
+<body>
+  <div id="popup-content" class="popup-content">
+    <label class="purge-option-label"><input type="checkbox" name="history" id="history-checkbox" class="purge-option-checkbox"><span class="purge-option-label-text">Include History</span></label>
+    <label class="purge-option-label"><input type="checkbox" name="cookies" id="cookies-checkbox" class="purge-option-checkbox" checked="true"><span class="purge-option-label-text">Include Cookies</span></label>
+    <label class="purge-option-label"><input type="checkbox" name="local storage" id="local-storage-checkbox" class="purge-option-checkbox" checked="true"><span class="purge-option-label-text">Include LocalStorage, etc.</span></label>
+    <button id="purge" class="purge-button">Purge Current Context</button>
+  </div>
+  <div id="confirmation-content" class="confirmation-content">
+    <p class="confirmation-message">Purge
+      <span class="selected-items"></span> for
+      <span class="contextual-identities">
+        <span class="ctx-icon"></span>
+        <span class="ctx-name"></span>
+      </span> container?
+    </p>
+    <div class="button-row">
+      <input type="hidden" id="cookieStoreId">
+      <button id="confirm" class="confirm-button">Ok</button>
+      <button id="cancel" class="cancel-button">Cancel</button>
+    </div>
+  </div>
+  <div id="error-content" class="hidden">
+    <p>Can't beastify this web page.</p><p>Try a different page.</p>
+  </div>
+  <script src="menu.js"></script>
+</body>
+
+</html>

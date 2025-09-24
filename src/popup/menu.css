@@ -1,0 +1,139 @@
+@font-face {
+  /* Postscript name is "Asap-Regular" for loading purposes, but when assigning
+     within a CSS rule, the name is just "Asap" */
+  font-family: "Asap-Regular";
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url("./Asap-Regular.otf") format("otf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Asap", sans-serif;
+}
+
+html,
+body {
+  width: 210px;
+}
+
+html .hidden {
+  display: none;
+}
+
+.confirmation,
+.confirmation body {
+  width: 325px;
+}
+
+.popup-content,
+.confirmation .confirmation-content,
+.purge-option-label {
+  display: block;
+}
+
+.confirmation-content,
+.confirmation .popup-content {
+  display: none;
+}
+
+button {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  margin: 3% auto;
+  width: 100%;
+  padding: 4px;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: hsl(240, 3%, 94%);
+}
+
+button:hover,
+button:focus {
+  background-color: hsl(240, 2%, 87%);
+}
+
+button:active {
+  background-color: hsl(240, 2%, 81%);
+}
+
+button[disabled],
+button[disabled]:hover,
+button[disabled]:focus,
+button[disabled]:active {
+  color: hsl(0, 0%, 80%);
+  background-color: hsl(240, 0%, 96%);
+  cursor: default;
+}
+
+.purge-button {
+  margin-top: 2rem;
+}
+
+.confirmation-message {
+  line-height: 1.4;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.confirm-button {
+  flex: 0 1 35%;
+}
+.cancel-button {
+  flex: 1 1 60%;
+}
+
+.confirm-button {
+  position: relative;
+}
+
+.confirm-button[disabled]::after {
+  animation: confirm-cooldown 1.25s ease-in forwards;
+  border-top: 2px solid hsl(0, 0%, 62%);
+  border-radius: 4px;
+  bottom: 0;
+  content: " ";
+  display: block;
+  left: 1px;
+  position: absolute;
+  transform-origin: left;
+  width: 100%;
+}
+
+@keyframes confirm-cooldown {
+  0% {
+    transform: scaleX(100%);
+  }
+  100% {
+    transform: scaleX(0%);
+  }
+}
+
+.contextual-identities {
+  display: inline-block;
+  word-break: keep-all;
+  border-bottom: 3px solid transparent;
+}
+
+.contextual-identities[style] {
+  line-height: 1.2;
+}
+
+.ctx-icon {
+  display: inline-block;
+  height: 14px;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 16px 16px;
+  width: 14px;
+}
