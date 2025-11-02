@@ -2,7 +2,7 @@
   "description": "Purge cookies and other storage within the current container",
   "manifest_version": 2,
   "name": "Container Purge",
-  "version": "1.0",
+  "version": "1.1.0",
   "homepage_url": "https://github.com/DanHerbert/FFContainerPurge",
   "browser_specific_settings": {
     "gecko": {

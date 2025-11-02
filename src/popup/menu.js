@@ -16,7 +16,6 @@ function loadSettings() {
         return;
       }
       const settings = result.purgeSettings;
-      $qs("#history-checkbox").checked = settings.history;
       $qs("#cookies-checkbox").checked = settings.cookies;
       $qs("#local-storage-checkbox").checked = settings.localStorage;
     })
@@ -25,7 +24,6 @@ function loadSettings() {
 
 async function saveSettings() {
   const settings = {
-    history: $qs("#history-checkbox").checked,
     cookies: $qs("#cookies-checkbox").checked,
     localStorage: $qs("#local-storage-checkbox").checked,
   };
@@ -113,7 +111,6 @@ async function handlePurgeConfirmClick() {
   const cookieStoreId = $qs("#cookieStoreId").value;
   const removalOptions = { cookieStoreId };
   const dataTypes = {
-    history: $qs("#history-checkbox").checked,
     cookies: $qs("#cookies-checkbox").checked,
     indexedDB: $qs("#local-storage-checkbox").checked,
     localStorage: $qs("#local-storage-checkbox").checked,
